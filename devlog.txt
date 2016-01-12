@@ -1,7 +1,9 @@
 Our Devlog
 
-=======================Date=======================
-Goals:
+=======================1/12/16=======================
+Goals: 
+1. Create Abstract class Pokemon.
+2. Create two test Pokemon.
 Changes made:
 Completed goals:
 Uncompleted goals:
