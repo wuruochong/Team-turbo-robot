@@ -4,12 +4,14 @@ Our Devlog
 Goals: 
 1. Create Abstract class Pokemon.
 2. Create two test Pokemon.
-Changes made:
-Completed goals:
-Uncompleted goals:
+Changes made: Started Abstract class.
+Completed goals: Pokemon.java created
+Uncompleted goals: Test Pokemon were not created.
 
-=======================Date=======================
-Goals:
+=======================1/13/16=======================
+Goals: 
+1. Create a directory with Element files that each contain moves of that Element.
+Notes: We realized that in order for test Pokemon to be created, we needed a system of assigning moves and a place to hold all of the moves.
 Changes made:
 Completed goals:
 Uncompleted goals:
