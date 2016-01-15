@@ -1,0 +1,12 @@
+To-Do List
+1. Create 2 basic Pokemon for test of Battle module.
+2. Write code for the Battle module for testing.
+3. Create classes of ~50 pokemon and also classes for Attacks.
+4. Test some more using Battle Module and implement experience points system.
+5. Make a class Player that has the ability to hold a team of Pokemon.
+6. Give the Player items.
+7. Create a basic story consisting of starting in a new town, then moving onto the 
+next closest town, battling other wild Pokemon and AI's along the way.
+7.5 Include situations in which you and your team gets knocked out.
+8. Using this basic story, we create link different basic parts of the story together.
+9. Finally, add in Gym Leaders and the Elite Four to finish the game!
