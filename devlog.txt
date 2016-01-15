@@ -1,4 +1,4 @@
-Our Devlog
+Team turbo-robot Devlog
 
 =======================1/12/16=======================
 Goals: 
@@ -16,8 +16,10 @@ Changes made:
 Completed goals:
 Uncompleted goals:
 
-=======================Date=======================
-Goals:
+=======================1/15/16=======================
+Goals: Create test Pokemon
+Create class that contains types, and moves.
+UML diagram and Flowchart redo.
 Changes made:
 Completed goals:
 Uncompleted goals:
