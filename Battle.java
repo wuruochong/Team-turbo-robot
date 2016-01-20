@@ -32,8 +32,18 @@ public class Battle{
 	    if (player.getSpd() > enemy.getSpd()){
 		enemy.lowerHP(playerdmg);
 	        System.out.println("Player dealt "+playerdmg+" dmg");
+		System.out.println("enemy hp =" + enemy.getHP());
 		player.lowerHP(enemydmg);
 		System.out.println("Enemy dealt "+enemydmg+" dmg");
+		System.out.println("player hp =" + player.getHP());
+	    }
+	    if (player.getSpd() < enemy.getSpd()){
+		player.lowerHP(enemydmg);
+		System.out.println("Enemy dealt "+enemydmg+" dmg");
+		System.out.println("player hp =" + player.getHP());
+		enemy.lowerHP(playerdmg);
+	        System.out.println("Player dealt "+playerdmg+" dmg");
+		System.out.println("enemy hp =" + enemy.getHP());
 	    }
 	    if ((player.isAlive() == false) || (enemy.isAlive() == false)){
 		gameOver = true;
