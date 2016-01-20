@@ -81,4 +81,10 @@ public abstract class Pokemon {
     public String toString(){
 	return getName()+"\t"+getlvl()+"\n"+getHP();
     }
+    
+    public void lowerHP(int damage){
+    	setHP(getHP()-damage);
+    }
+    
+    
 }
