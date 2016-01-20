@@ -50,7 +50,7 @@ public abstract class Pokemon {
     //=========Mutators=========
     
     public void setHP(int x){
-	_hitpoints = x;
+	_hitPts = x;
     }
 
     public void setexp(int x){
@@ -79,12 +79,12 @@ public abstract class Pokemon {
     }
 
     public String toString(){
-	return getName()+"\t"+getlvl()+"\n"+getHP();
+	return getName()+"\t"+getLvl()+"\n"+getHP();
     }
     
     public void lowerHP(int damage){
     	setHP(getHP()-damage);
     }
     
-    
+    public abstract int ReadMove(int x);
 }
