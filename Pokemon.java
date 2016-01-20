@@ -17,8 +17,13 @@ public abstract class Pokemon {
 	_name = "MissingNo.";
     }
 
+    //=========Accessors=========
     public String getName(){
 	return _name;
+    }
+
+    public int getHP(){
+	return _hitPts;
     }
 
     public int getExp(){
@@ -42,10 +47,38 @@ public abstract class Pokemon {
 	return _spd;
     }
 
+    //=========Mutators=========
+    
+    public void setHP(int x){
+	_hitpoints = x;
+    }
 
+    public void setexp(int x){
+	_exp = x;
+    }
 
+    public void setlvl(int x){
+	_lvl = x;
+    }
+
+    public void setatk(int x){
+	_atk = x;
+    }
+
+    public void setdef(int x){
+	_def = x;
+    }
+
+    public void setspd(int x){
+	_spd = x;
+    }
+
+    //=========Other Methods=========
     public boolean isAlive(){
 	return _hitPts > 0;
     }
 
-    public 
+    public String toString(){
+	return getName()+"\t"+getlvl()+"\n"+getHP();
+    }
+}
