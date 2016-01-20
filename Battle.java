@@ -1,4 +1,4 @@
-import cs1.Keyboardl;
+import cs1.Keyboard;
 
 public class Battle{
     private Pokemon player;
@@ -31,5 +31,15 @@ public class Battle{
 	    int enemydmg = enemy.readMove(moveNum);
 	    if (player.getSpd() > enemy.getSpd()){
 		enemy.lowerHP(playerdmg);
-		gameOver = !(enemy.isAlive());
-	    }
+	        System.out.println("Player dealt "+playerdmg+" dmg");
+		player.lowerHP(enemydmg);
+		System.out.println("Enemy dealt "+enemydmg+" dmg");
+	    
+	    if ((player.isAlive() == false) || (enemy.isAlive() == false)){
+		gameOver == true;)
+		}
+	}
+	System.out.println("The Battle is Over");
+    }
+
+}
