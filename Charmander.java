@@ -3,10 +3,15 @@ public class Charmander extends Pokemon{
 	_name = "Charmander";	
 	_exp = 0;
 	_lvl = 5;
-	_atk = 52;
-	_def = 43;
-	_spd = 65;
-	_hitPts = 39;
+	_atkb = 52;
+	_defb = 43;
+	_spdb = 65;
+	_hitPtsb = 39;
+	_hitPts = HPCalc();
+	_atk = statCalc(_atkb);
+	_def = statCalc(_defb);
+	_spd = statCalc(_spdb);
+
     }
 
     public int Scratch(){

@@ -1,23 +1,39 @@
 public abstract class Pokemon {
+    protected int _hitPtsb;
     protected int _hitPts;
     protected int _exp;
     protected int _lvl;
+    protected int _atkb;
     protected int _atk;
+    protected int _defb;
     protected int _def;
+    protected int _spdb;
     protected int _spd;
     protected String _name;
 
     public Pokemon(){
-	_hitPts = 20;
+	_hitPtsb = 20;
 	_exp = 0;
 	_lvl = 1;
-	_atk = 30;
-	_def = 30;
-	_spd = 30;
+	_atkb = 30;
+	_defb = 30;
+	_spdb = 30;
 	_name = "MissingNo.";
+	_hitPts = HPCalc();
+	_atk = statCalc(_atkb);
+	_def = statCalc(_defb);
+	_spd = statCalc(_spdb);
     }
 
     //=========Accessors=========
+
+    public int HPCalc(){
+	return (((getHP() * 2 * getLvl()) / 100)+ getLvl()+ 10);
+    }
+
+    public int statCalc(int stat){
+	return (((stat * 2 * getLvl())/100) + 5);
+    }
     public String getName(){
 	return _name;
     }
@@ -79,7 +95,7 @@ public abstract class Pokemon {
     }
 
     public String toString(){
-	return getName()+"\t"+getLvl()+"\n"+getHP();
+	return getName()+"\t Lvl "+getLvl()+"\n HP: "+getHP();
     }
     
     public void lowerHP(int damage){

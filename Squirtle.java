@@ -2,11 +2,15 @@ public class Squirtle extends Pokemon{
     public Squirtle(){
 	_name = "Squirtle";	
 	_exp = 0;
-	_lvl = 5;
-	_atk = 48;
-	_def = 65;
-	_spd = 43;
-	_hitPts = 44;
+	_lvl = 5000;
+	_atkb = 48;
+	_defb = 65;
+	_spdb = 43;
+	_hitPtsb = 44;
+	_hitPts = HPCalc();
+	_atk = statCalc(_atkb);
+	_def = statCalc(_defb);
+	_spd = statCalc(_spdb);
     }
 
     public int Pound(){
