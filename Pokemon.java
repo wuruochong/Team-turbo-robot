@@ -87,4 +87,5 @@ public abstract class Pokemon {
     }
     
     public abstract int ReadMove(int x);
+    public abstract String PrintMoves();
 }

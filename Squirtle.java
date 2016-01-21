@@ -27,4 +27,8 @@ public class Squirtle extends Pokemon{
 	else
 	    return 0;
     }
+
+    public String PrintMoves(){
+	return "1:Pound" + "\n" + "2.Ember";
+    }
 }

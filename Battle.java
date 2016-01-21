@@ -24,7 +24,7 @@ public class Battle{
 	    roundCount+=1;
 	    System.out.println("Round " + roundCount);
 	    System.out.println("Choose a move:\n Avalible moves:");
-	    //	    System.out.println(player.printMoves);
+	    System.out.println(player.PrintMoves());
 	    int moveNum1 = Keyboard.readInt();
 	    int playerdmg = player.ReadMove(moveNum1);
 	    int moveNum2 = (int)((Math.random()*4)+1);
@@ -32,14 +32,22 @@ public class Battle{
 	    if (player.getSpd() > enemy.getSpd()){
 		enemy.lowerHP(playerdmg);
 	        System.out.println("Player dealt "+playerdmg+" dmg");
+		if (!enemy.isAlive()){
+		    System.out.println("You defeated " + enemy.getName());
+		    break;
+		}
 		System.out.println("enemy hp =" + enemy.getHP());
 		player.lowerHP(enemydmg);
 		System.out.println("Enemy dealt "+enemydmg+" dmg");
 		System.out.println("player hp =" + player.getHP());
 	    }
-	    if (player.getSpd() < enemy.getSpd()){
+	    else if (player.getSpd() < enemy.getSpd()){
 		player.lowerHP(enemydmg);
 		System.out.println("Enemy dealt "+enemydmg+" dmg");
+		if (!player.isAlive()){
+		    System.out.println("Your " + player.getName() + " has fainted");
+		    break;
+		}
 		System.out.println("player hp =" + player.getHP());
 		enemy.lowerHP(playerdmg);
 	        System.out.println("Player dealt "+playerdmg+" dmg");

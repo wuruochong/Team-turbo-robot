@@ -27,4 +27,8 @@ public class Charmander extends Pokemon{
 	else
 	    return 0;
     }
+
+    public String PrintMoves(){
+	return "1:Scratch" + "\n" + "2:Ember";
+    }
 }
