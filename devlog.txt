@@ -24,10 +24,10 @@ Changes made:
 Completed goals:
 Uncompleted goals:
 
-=======================Date=======================
-Goals:
-Changes made:
-Completed goals:
+=======================1/20/16=======================
+Goals: Finish Test Pokemon, finish prelim version of Battle, add to /polish Battle
+Changes made: 2 test pokemons created, basic battle function working
+Completed goals:Finish test pokemon, finish prelim version of Battle
 Uncompleted goals:
 
 =======================Date=======================
