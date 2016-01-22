@@ -1,0 +1,28 @@
+Team-turbo-robot Ruochong Wu, James Hua
+APCS1 PD10
+HW58 -- Checking In
+2016-01-21
+
+Our Pokemon Project Progress:
+
+Obstacles Overcome:
+1. Got moves for Pokemons working (by hardcoding them into each Pokemon)
+2. Built connections between Pokemons and the Battle.java file (readMove method in Pokemons)
+3. Balancing issues (Use Nintendo's official stats + formulas)
+4. Getting a basic battle working and creating gameover checks at appropriate points (Flow chart anaylsis)
+
+Unresolved Issues:
+1. Develop more efficient method of storing moves instead of just hardcoding
+2. Develop trainer class for player character and potentially multiple trainer battles
+3. System for keeping track of xp and leveling up when appropriate and modifying stats.
+4. More Pokemons / More efficient Pokemon structure for faster development (ties into #1)
+
+Cool Stuff Learned:
+1. How Pokemon battles actually work.
+2. How the YoRPG skeleton file actually worked.
+
+Mid Development Design Changes:
+1. Focus more on Battle module. Instead of trying to develop a small/buggy world try to create a Battle factory (Increasingly difficult battles, time to level up / buy items / heal up in between battles, legendary/rare Pokemon once certain conditions are met etc.) We decided that this will be more fun than a hastily put together text based world and will be easier to test/polish.
+
+Lessons Learned:
+Placeholders are awesome. When developing a big project it is good to focus on the "spine" with placeholders attatched to it. This allows the development of a working version much faster, boosting morale and preventing disorganization.
