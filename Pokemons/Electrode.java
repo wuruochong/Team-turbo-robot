@@ -10,41 +10,68 @@ public class Electrode extends Pokemon{
 	_spdb = 140;
 	_spb = 80;
 	_hitPtsb = 60;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
+	HealPP();
     }
 
-    public int Tackle(){
-	return 35;
+    public int Tackle(Pokemon a){
+	int main = damageCalc(a,35);
+	int mod = (int) Effective(a, "Normal");
+	return (int)(main*mod);
+    }
+   
+    public int Selfdestruct(Pokemon a){
+	int main = damageCalcsp(a,130);
+	int mod = (int) Effective(a, "Normal");
+	setHP(0);
+	return (int)(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Swift(Pokemon a){
+	int main = damageCalcsp(a,60);
+	int mod = (int)Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int Vine_Whip(){
-	return 55;
+    public int Explosion(Pokemon a){
+	int main = damageCalcsp(a,170);
+	int mod =(int) Effective(a, "Normal");
+	setHP(0);
+	return (int)(main * mod);
     }
 
-    public int SolarBeam(){
-	return 120;
-    }
-
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Tackle(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Selfdestruct(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Swift(a);
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return Explosion(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Tackle \t" + getPP1() + "\n" +
+		"2:Selfdestruct \t" +getPP2() + "\n" +
+		"3:Swift \t" + getPP3() + "\n" +
+		"4:Explosion \t" + getPP4() + "\n");
     }
+
+    public void HealPP(){
+	setPP1(35);
+	setPP2(5);
+	setPP3(20);
+	setPP4(5);
+    }
+  
 }
