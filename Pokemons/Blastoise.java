@@ -1,18 +1,20 @@
-public class Squirtle extends Pokemon{
-    public Squirtle(){
-	_name = "Squirtle";
+public class Blastoise extends Pokemon{
+    public Blastoise(){
+	_name = "Blastoise";
 	Type1 = "Water";
 	Type2 = "none";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 48+IVgen();
-	_defb = 65+IVgen();
-	_spdb = 43+IVgen();
-	_hitPtsb = 44+IVgen();
+	_atkb = 83;
+	_defb = 100;
+	_spdb = 78;
+	_spb = 85;
+	_hitPtsb = 79;
 	_hitPts = HPCalc();
 	_atk = statCalc(_atkb);
 	_def = statCalc(_defb);
 	_spd = statCalc(_spdb);
+	_sp = statCalc(_spb);
     }
 
     public int Pound(){

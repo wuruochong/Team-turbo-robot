@@ -1,19 +1,20 @@
-public class Charmander extends Pokemon{
-    public Charmander(){
-	_name = "Charmander";
+public class Charizard extends Pokemon{
+    public Charizard(){
+	_name = "Charizard";
 	Type1 = "Fire";
-	Type2 = "none";
+	Type2 = "Flying";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 52+IVgen();
-	_defb = 43+IVgen();
-	_spdb = 65+IVgen();
-	_hitPtsb = 39+IVgen();
+	_atkb = 84;
+	_defb = 78;
+	_spdb = 100;
+	_spb = 85;
+	_hitPtsb = 78;
 	_hitPts = HPCalc();
 	_atk = statCalc(_atkb);
 	_def = statCalc(_defb);
 	_spd = statCalc(_spdb);
-
+	_sp = statCalc(_spb);
     }
 
     public int Scratch(){

@@ -1,27 +1,36 @@
-public class Charmander extends Pokemon{
-    public Charmander(){
-	_name = "Charmander";
-	Type1 = "Fire";
+public class Pinsir extends Pokemon{
+    public Pinsir(){
+	_name = "Pinsir";
+	Type1 = "Bug";
 	Type2 = "none";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 52+IVgen();
-	_defb = 43+IVgen();
-	_spdb = 65+IVgen();
-	_hitPtsb = 39+IVgen();
+	_atkb = 125;
+	_defb = 100;
+	_spdb = 85;
+	_spb = 55;
+	_hitPtsb = 65;
 	_hitPts = HPCalc();
 	_atk = statCalc(_atkb);
 	_def = statCalc(_defb);
 	_spd = statCalc(_spdb);
-
+	_sp = statCalc(_spb);
     }
 
-    public int Scratch(){
-	return 15;
+    public int Tackle(){
+	return 35;
     }
 
-    public int Ember(){
-	return 20;
+    public int Razor_Leaf(){
+	return 35;
+    }
+
+    public int Vine_Whip(){
+	return 55;
+    }
+
+    public int SolarBeam(){
+	return 120;
     }
 
     public int ReadMove(int x){
