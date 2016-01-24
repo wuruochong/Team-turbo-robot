@@ -1,27 +1,36 @@
-public class Charmander extends Pokemon{
-    public Charmander(){
-	_name = "Charmander";
+public class Flareon extends Pokemon{
+    public Flareon(){
+	_name = "Flareon";
 	Type1 = "Fire";
 	Type2 = "none";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 52+IVgen();
-	_defb = 43+IVgen();
-	_spdb = 65+IVgen();
-	_hitPtsb = 39+IVgen();
+	_atkb = 130;
+	_defb = 60;
+	_spdb = 65;
+	_spb = 110;
+	_hitPtsb = 65;
 	_hitPts = HPCalc();
 	_atk = statCalc(_atkb);
 	_def = statCalc(_defb);
 	_spd = statCalc(_spdb);
-
+	_sp = statCalc(_spb);
     }
 
-    public int Scratch(){
-	return 15;
+    public int Tackle(){
+	return 35;
     }
 
-    public int Ember(){
-	return 20;
+    public int Razor_Leaf(){
+	return 35;
+    }
+
+    public int Vine_Whip(){
+	return 55;
+    }
+
+    public int SolarBeam(){
+	return 120;
     }
 
     public int ReadMove(int x){

@@ -1,4 +1,6 @@
 public abstract class Pokemon {
+    protected String Type1;
+    protected String Type2;
     protected int _hitPtsb;
     protected int _hitPts;
     protected int _exp;
@@ -9,6 +11,8 @@ public abstract class Pokemon {
     protected int _def;
     protected int _spdb;
     protected int _spd;
+    protected int _spb;
+    protected int _sp;
     protected String _name;
 
     public Pokemon(){
@@ -18,15 +22,17 @@ public abstract class Pokemon {
 	_atkb = 30;
 	_defb = 30;
 	_spdb = 30;
+	_spb = 30
 	_name = "MissingNo.";
 	_hitPts = HPCalc();
 	_atk = statCalc(_atkb);
 	_def = statCalc(_defb);
 	_spd = statCalc(_spdb);
+	_sp = statCalc(_spb);
     }
 
-    //=========Accessors=========
-
+    //=========Stat Calculators=========
+    
     public int HPCalc(){
 	return (((getHP() * 2 * getLvl()) / 100)+ getLvl()+ 10);
     }
@@ -34,6 +40,13 @@ public abstract class Pokemon {
     public int statCalc(int stat){
 	return (((stat * 2 * getLvl())/100) + 5);
     }
+    
+    public int IVgen(){
+	return (int)(Math.random()*16);
+    }
+
+    //=========Accessors=========
+    
     public String getName(){
 	return _name;
     }
@@ -63,6 +76,10 @@ public abstract class Pokemon {
 	return _spd;
     }
 
+    public int getSp(){
+	return _sp;
+    }
+
     //=========Mutators=========
     
     public void setHP(int x){
@@ -87,6 +104,10 @@ public abstract class Pokemon {
 
     public void setspd(int x){
 	_spd = x;
+    }
+
+    public void setsp(int x){
+	_sp = x;
     }
 
     //=========Other Methods=========
