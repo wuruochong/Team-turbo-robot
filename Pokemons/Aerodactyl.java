@@ -10,41 +10,57 @@ public class Aerodactyl extends Pokemon{
 	_spdb = 130;
 	_spb = 60;
 	_hitPtsb = 80;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
     }
 
-    public int Tackle(){
-	return 35;
+    public int Wing_Attack(Pokemon a){
+	int main = damageCalc(a,35);
+	int mod = 1.5 * Effective(a, "Flying");
+	return int(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Bite(Pokemon a){
+	int main = damageCalc(a,60);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
     }
 
-    public int Vine_Whip(){
-	return 55;
+    public int Take_Down(Pokemon a){
+	int main = damageCalc(a,90);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
     }
 
-    public int SolarBeam(){
-	return 120;
+    public int HyperBeam(Pokemon a){
+	int main = damageCalc(a,150);
+	int mod = 1.5 * Effective(a, "Normal");
+	return int(main * mod);
     }
 
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Wing_Attack(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Bite(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Take_Down(a);
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return HyperBream(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Wing Attack \t" + getPP1() + "\n" +
+		"2:Bite \t" +getPP2() + "\n" +
+		"3:Take Down \t" + getPP3() + "\n" +
+		"4:HyperBeam \t" + getPP4() + "\n");
     }
 }
