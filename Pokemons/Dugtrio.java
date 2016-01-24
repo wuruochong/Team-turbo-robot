@@ -10,41 +10,66 @@ public class Dugtrio extends Pokemon{
 	_spdb = 120;
 	_spb = 70;
 	_hitPtsb = 35;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
+	HealPP();
     }
 
-    public int Tackle(){
-	return 35;
+    public int Scratch(Pokemon a){
+	int main = damageCalc(a,35);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
+    }
+   
+    public int Dig(Pokemon a){
+	int main = damageCalc(a,100);
+	int mod = 1.5 * Effective(a, "Ground");
+	return int(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Slash(Pokemon a){
+	int main = damageCalc(a,70);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
     }
 
-    public int Vine_Whip(){
-	return 55;
+    public int Earthquake(Pokemon a){
+	int main = damageCalc(a,100);
+	int mod = 1.5 * Effective(a, "Ground");
+	return int(main * mod);
     }
 
-    public int SolarBeam(){
-	return 120;
-    }
-
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Scratch(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Dig(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Slash(a);
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return Earthquake(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Scratch \t" + getPP1() + "\n" +
+		"2:Dig \t" +getPP2() + "\n" +
+		"3:Slash \t" + getPP3() + "\n" +
+		"4:Earthquake \t" + getPP4() + "\n");
     }
+
+    public void HealPP(){
+	setPP1(35);
+	setPP2(10);
+	setPP3(20);
+	setPP4(10);
+    }
+  
 }

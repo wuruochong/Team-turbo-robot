@@ -10,41 +10,64 @@ public class Dragonite extends Pokemon{
 	_spdb = 80;
 	_spb = 100;
 	_hitPtsb = 91;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
+	HealPP();
     }
 
-    public int Tackle(){
-	return 35;
+    public int Wrap(Pokemon a){
+	int main = damageCalc(a,15);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
+    }
+   
+    public int Slam(Pokemon a){
+	int main = damageCalc(a,80);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Dragon_Rage(){
+	return 40;
     }
 
-    public int Vine_Whip(){
-	return 55;
+    public int Hyper_Beam(Pokemon a){
+	int main = damageCalc(a,150);
+	int mod = Effective(a, "Normal");
+	return int(main * mod);
     }
 
-    public int SolarBeam(){
-	return 120;
-    }
-
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Wrap(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Slam(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Dragon_Rage();
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return Hyper_Beam(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Wrap \t" + getPP1() + "\n" +
+		"2:Slam \t" +getPP2() + "\n" +
+		"3:Dragon Rage \t" + getPP3() + "\n" +
+		"4:Hyper Beam \t" + getPP4() + "\n");
     }
+
+    public void HealPP(){
+	setPP1(20);
+	setPP2(20);
+	setPP3(10);
+	setPP4(5);
+    }
+  
 }
