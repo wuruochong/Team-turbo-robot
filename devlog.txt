@@ -30,6 +30,18 @@ Changes made: 2 test pokemons created, basic battle function working
 Completed goals:Finish test pokemon, finish prelim version of Battle
 Uncompleted goals:
 
+=======================1/22/16=======================
+Goals: Revisit diagrams and figure out next move. Improve Battle. Add more Pokemon.
+Changes made: Trainer.java created.
+Completed goals: Next step clear.
+Uncompleted goals:
+
+=======================1/23/16=======================
+Goals: Improve Battle.java, Add more Pokemon, finish Trainer.java
+Changes made: Trainer.java, <Pokemon>.java
+Completed goals: Around 80 Pokemon files created with base stats encoded. Trainer.java preliminary version completed. 
+Uncompleted goals: Battle.java improvements, Formulas for each Pokemon
+
 =======================Date=======================
 Goals:
 Changes made:
