@@ -21,6 +21,7 @@ public class Game{
 	pokemonList.add(new Blastoise());
 	pokemonList.add(new Butterfree());
 	pokemonList.add(new Chansey());
+	pokemonList.add(new
 	newGame();
 
     }
@@ -45,9 +46,11 @@ public class Game{
 	player.setPokemon(4,pokemonList.get(Keyboard.readInt()));
 	System.out.println("Choose #6:");
 	player.setPokemon(5,pokemonList.get(Keyboard.readInt()));
-	System.out.println(player);
+	for (Pokemon x : player.pokemonHolder){
+	    x.setStats();
+	}
 	
-	while (!player.isAlive()){
+	while (player.isAlive()){
 	    Battle battle = new Battle(player,enemy);
 	    enemy = new Trainer();
 	}
