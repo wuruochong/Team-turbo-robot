@@ -80,6 +80,12 @@ public class Game{
 	while (player.isAlive()){
 	    Battle battle = new Battle(player,enemy);
 	    enemy = new Trainer();
+	    enemey.setPokemon(0,pokemonList.get((int)(Math.random()*38)));
+	    enemey.setPokemon(1,pokemonList.get((int)(Math.random()*38)));
+	    enemey.setPokemon(2,pokemonList.get((int)(Math.random()*38)));
+	    enemey.setPokemon(3,pokemonList.get((int)(Math.random()*38)));
+	    enemey.setPokemon(4,pokemonList.get((int)(Math.random()*38)));
+	    enemey.setPokemon(5,pokemonList.get((int)(Math.random()*38)));
 	}
 	System.out.println("Game Over");
     }
