@@ -50,7 +50,8 @@ public class Mewtwo extends Pokemon{
 	}
 	else if (x == 3){
 	    setPP3(getPP3()-1);
-	    return Recover(a);
+	    Recover();
+	    return 0;
 	}
 	else if (x == 4){
 	    setPP4(getPP4()-1);

@@ -21,7 +21,7 @@ public class Electabuzz extends Pokemon{
    
     public int ThunderPunch(Pokemon a){
 	int main = damageCalc(a,75);
-	double = 1.5 * Effective(a, "Electric");
+	double mod= 1.5 * Effective(a, "Electric");
 	return (int)(main * mod);
     }
 

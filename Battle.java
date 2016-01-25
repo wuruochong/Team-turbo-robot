@@ -1,3 +1,4 @@
+import Pokemons.*;
 import cs1.Keyboard;
 
 public class Battle{

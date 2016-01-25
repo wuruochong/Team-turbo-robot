@@ -1,3 +1,4 @@
+import Pokemons.*;
 public class Trainertest{
     public static void main(String[] args){
 	Trainer x = new Trainer();

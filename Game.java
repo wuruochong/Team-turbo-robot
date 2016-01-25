@@ -1,4 +1,5 @@
 import cs1.Keyboard;
+import Pokemons.*;
 
 public class Game{
     protected Trainer player;

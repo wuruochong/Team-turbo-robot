@@ -1,5 +1,5 @@
-public class Chancey extends Pokemon{
-    public Chancey(){
+public class Chansey extends Pokemon{
+    public Chansey(){
 	_name = "Chancey";
 	Type1 = "Normal";
 	Type2 = "none";

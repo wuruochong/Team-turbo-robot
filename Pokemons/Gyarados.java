@@ -20,7 +20,7 @@ public class Gyarados extends Pokemon{
     }
 
     public int Dragon_Rage(){
-	retunr 40;
+	return 40;
     }
 
     public int Hydro_Pump(Pokemon a){

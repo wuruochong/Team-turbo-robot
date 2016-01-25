@@ -51,7 +51,7 @@ public class Exeggutor extends Pokemon{
 	}
 	else if (x == 4){
 	    setPP4(getPP4()-1);
-	    return Solarbeam(a);
+	    return SolarBeam(a);
 	}
 	else
 	    return 0;
