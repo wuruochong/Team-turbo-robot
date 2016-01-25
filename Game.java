@@ -20,6 +20,11 @@ public class Game{
 	Pokemon d = new Articuno();
 	Pokemon e = new Butterfree();
 	Pokemon f = new Charizard();
+	a.setStats();
+	b.setStats();
+	c.setStats();
+	d.setStats();
+	e.setStats();
 	player.setPokemon(0,a);
 	player.setPokemon(1,b);
 	player.setPokemon(2,c);
