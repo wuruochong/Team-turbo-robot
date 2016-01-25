@@ -78,14 +78,21 @@ public class Game{
 	}
 	
 	while (player.isAlive()){
-	    Battle battle = new Battle(player,enemy);
 	    enemy = new Trainer();
-	    enemey.setPokemon(0,pokemonList.get((int)(Math.random()*38)));
-	    enemey.setPokemon(1,pokemonList.get((int)(Math.random()*38)));
-	    enemey.setPokemon(2,pokemonList.get((int)(Math.random()*38)));
-	    enemey.setPokemon(3,pokemonList.get((int)(Math.random()*38)));
-	    enemey.setPokemon(4,pokemonList.get((int)(Math.random()*38)));
-	    enemey.setPokemon(5,pokemonList.get((int)(Math.random()*38)));
+	    enemy.setPokemon(0,pokemonList.get((int)(Math.random()*38)));
+	    enemy.setPokemon(1,pokemonList.get((int)(Math.random()*38)));
+	    enemy.setPokemon(2,pokemonList.get((int)(Math.random()*38)));
+	    enemy.setPokemon(3,pokemonList.get((int)(Math.random()*38)));
+	    enemy.setPokemon(4,pokemonList.get((int)(Math.random()*38)));
+	    enemy.setPokemon(5,pokemonList.get((int)(Math.random()*38)));
+	    for (Pokemon x : enemy.pokemonHolder){
+		x.setStats();
+	    }
+	    for (Pokemon x : player.pokemonHolder){
+		x.Heal();
+	    }
+	    Battle battle = new Battle(player,enemy);
+
 	}
 	System.out.println("Game Over");
     }

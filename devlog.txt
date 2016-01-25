@@ -42,8 +42,8 @@ Changes made: Trainer.java, <Pokemon>.java
 Completed goals: Around 80 Pokemon files created with base stats encoded. Trainer.java preliminary version completed. 
 Uncompleted goals: Battle.java improvements, Formulas for each Pokemon
 
-=======================Date=======================
-Goals:
-Changes made:
-Completed goals:
+=======================1/24/16=======================
+Goals: Finish
+Changes made: Finalized 26 Pokemon, updated Battle.java, Driver2.java, Trainer.java, Game.java
+Completed goals: Finished
 Uncompleted goals:

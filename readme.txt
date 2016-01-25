@@ -1,3 +1,3 @@
-First running version (Battle module)
-compile Driver.java (javac Driver.java)
-run Driver (java Driver)
+Pokemon
+compile Driver2.java (javac Driver2.java)
+run Driver2 (java Driver2)
