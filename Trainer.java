@@ -23,7 +23,7 @@ public class Trainer {
     public String toString(){
 	String res = _name +"\n";
         for (int count = 0 ; count < pokemonHolder.length ; count++){
-	    res += "Slot " + count + ": ";
+	    res += "Slot " + (count+1) + ": ";
 	    if (pokemonHolder[count] == null){
 		res += "Empty \n";
 	    }
@@ -35,6 +35,15 @@ public class Trainer {
     }
 
     public Pokemon getPokemon(int x){
-	return pokemonHolder[x-1];
+	return pokemonHolder[x];
+    }
+    public boolean isAlive(){
+	boolean res = true;
+	for (Pokemon x : pokemonHolder){
+	    if (x.isAlive() == false){
+		res = false;
+	    }
+	}
+	return res;
     }
 }

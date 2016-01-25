@@ -1,0 +1,24 @@
+import cs1.Keyboard;
+
+public class Game{
+    protected Trainer player;
+    protected Trainer enemy;
+
+    public Game(){
+	newGame();
+    }
+    
+    public void newGame(){
+	System.out.println("Welcome to Pokemon");
+	System.out.println("What is your name?");
+	String name = Keyboard.readString();
+	player = new Trainer(name);
+	enemy = new Trainer("Enemy");
+	while (player.isAlive()){
+	    Battle battle = new Battle(player,enemy);
+	    enemy = new Trainer();
+	}
+	System.out.println("Game Over");
+    }
+}
+	

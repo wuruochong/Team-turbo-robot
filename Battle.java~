@@ -1,12 +1,10 @@
 import cs1.Keyboard;
 
 public class Battle{
-    protected Trainer player;
-    protected Trainer enemy;
-    protected int roundCount;
-    protected boolean gameOver;
-    protected int playerPok;
-    protected int enemyPok;
+    private Trainer player;
+    private Trainer enemy;
+    private int roundCount;
+    private boolean gameOver;
     
     public Battle(Trainer p, Trainer e){
 	player = p;
@@ -20,10 +18,10 @@ public class Battle{
 
     public void newBattle(){
 	
-	while (gameOver  ==false){
+	while (gameOver == false){
 	    newGame(player.getPokemon(playerPok),enemy.getPokemon(enemyPok));
 	    if (playerPok > 5 || enemyPok >5){
-	    gameOver = true;
+	    gameOver == true;
 	}
 	}
     }
