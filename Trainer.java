@@ -1,4 +1,4 @@
-import Pokemons.*;
+
 public class Trainer {
     protected Pokemon[] pokemonHolder;
     protected String _name;

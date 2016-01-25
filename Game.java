@@ -1,5 +1,5 @@
 import cs1.Keyboard;
-import Pokemons.*;
+
 
 import java.util.ArrayList;
 
@@ -11,7 +11,6 @@ public class Game{
     protected ArrayList<Pokemon> pokemonList;
 
     public Game(){
-	newGame();
 	pokemonList = new ArrayList();
 	pokemonList.add(new Aerodactyl());
 	pokemonList.add(new Alakazam());
@@ -22,6 +21,8 @@ public class Game{
 	pokemonList.add(new Blastoise());
 	pokemonList.add(new Butterfree());
 	pokemonList.add(new Chansey());
+	newGame();
+
     }
     
     public void newGame(){
@@ -29,7 +30,22 @@ public class Game{
 	System.out.println("What is your name?");
 	String name = Keyboard.readString();
 	player = new Trainer(name);
-
+	for (int count = 0; count<pokemonList.size() ; count++){
+	    System.out.println(count+ ": " + (pokemonList.get(count)).getName());
+	}
+	System.out.println("Choose #1:");
+	player.setPokemon(0,pokemonList.get(Keyboard.readInt()));
+	System.out.println("Choose #2:");
+	player.setPokemon(1,pokemonList.get(Keyboard.readInt()));
+	System.out.println("Choose #3:");
+	player.setPokemon(2,pokemonList.get(Keyboard.readInt()));
+	System.out.println("Choose #4:");
+	player.setPokemon(3,pokemonList.get(Keyboard.readInt()));
+	System.out.println("Choose #5:");
+	player.setPokemon(4,pokemonList.get(Keyboard.readInt()));
+	System.out.println("Choose #6:");
+	player.setPokemon(5,pokemonList.get(Keyboard.readInt()));
+	System.out.println(player);
 	
 	while (!player.isAlive()){
 	    Battle battle = new Battle(player,enemy);

@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-import Pokemons.*
-=======
+
+
 import Pokemons.*;
->>>>>>> dd2221b852dd646f70b6c4e069e78b45fd2115e2
 import cs1.Keyboard;
 
 public class Battle{

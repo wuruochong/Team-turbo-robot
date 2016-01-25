@@ -169,7 +169,7 @@ public abstract class Pokemon {
     }
 
     public String toString(){
-	return getName()+"\t Lvl "+getLvl()+"\n HP: "+getHP();
+	return getName()+"\t Lvl "+getLvl()+"t HP: "+getHP()+ "\n";
     }
     
     public void lowerHP(int damage){
