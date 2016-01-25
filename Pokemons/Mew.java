@@ -10,41 +10,68 @@ public class Mew extends Pokemon{
 	_spdb = 100;
 	_spb = 100;
 	_hitPtsb = 100;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
+	HealPP();
+    }
+    
+    public int Pound(Pokemon a){
+	int main = damageCalc(a,35);
+	double mod = Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int Tackle(){
-	return 35;
+    public int Mega_Punch(Pokemon a){
+	int main = damageCalcsp(a,80);
+	double mod = Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Explosion(Pokemon a){
+	int main = damageCalcsp(a,170);
+	double mod = Effective(a, "Normal");
+	setHP(0);
+	return (int)(main * mod);
+    }
+    
+    public int Psychic(Pokemon a){
+	int main = damageCalcsp(a,90);
+	double mod = 1.5 * Effective(a, "Psychic");
+	return (int)(main * mod);
     }
 
-    public int Vine_Whip(){
-	return 55;
-    }
-
-    public int SolarBeam(){
-	return 120;
-    }
-
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Pound(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Mega_Punch(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Explosion(a);
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return Psychic(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Pound \t" + getPP1() + "\n" +
+		"2:Mega Punc \t" +getPP2() + "\n" +
+		"3:Explosion \t" + getPP3() + "\n" +
+		"4:Psychic \t" + getPP4() + "\n");
     }
+
+    public void HealPP(){
+	setPP1(35);
+	setPP2(20);
+	setPP3(5);
+	setPP4(10);
+    }
+  
 }
+

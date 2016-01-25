@@ -10,41 +10,64 @@ public class Machamp extends Pokemon{
 	_spdb = 55;
 	_spb = 65;
 	_hitPtsb = 90;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
+	HealPP();
     }
 
-    public int Tackle(){
-	return 35;
+    public int Karate_Chop(Pokemon a){
+	int main =  damageCalc(a,50);
+	double mod = Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Low_Kick(Pokemon a){
+	int main = damageCalc(a,50);
+	double mod = 1.5 * Effective(a, "Fighting");
+	return (int)(main * mod);
     }
 
-    public int Vine_Whip(){
-	return 55;
+    public int Seismic_Toss(){
+	return 50;
+    }
+    
+    public int Submission(Pokemon a){
+	int main = damageCalc(a,80);
+	double mod = 1.5 * Effective(a, "Fighting");
+	return (int)(main * mod);
     }
 
-    public int SolarBeam(){
-	return 120;
-    }
-
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Karate_Chop(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Low_Kick(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Seismic_Toss();
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return Submission(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Karate Chop \t" + getPP1() + "\n" +
+		"2:Low Kick \t" +getPP2() + "\n" +
+		"3:Seismic Toss \t" + getPP3() + "\n" +
+		"4:Submission \t" + getPP4() + "\n");
     }
+
+    public void HealPP(){
+	setPP1(25);
+	setPP2(20);
+	setPP3(20);
+	setPP4(25);
+    }
+  
 }

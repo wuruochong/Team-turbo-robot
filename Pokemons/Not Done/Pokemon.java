@@ -33,7 +33,7 @@ public abstract class Pokemon {
     //=========Stat Calculators=========
     
     public int HPCalc(){
-	return (((getHPb() * 2 * getLvl()) / 100)+ getLvl()+ 10);
+	return (((getHP() * 2 * getLvl()) / 100)+ getLvl()+ 10);
     }
 
     public int statCalc(int stat){
@@ -73,10 +73,6 @@ public abstract class Pokemon {
     
     public int getHP(){
 	return _hitPts;
-    }
-
-    public int getHPb(){
-	return _hitPtsb;
     }
 
     public int getExp(){
