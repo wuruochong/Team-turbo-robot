@@ -1,16 +1,22 @@
-public class Alakazam extends Pokemon{
-    public Alakazam(){
-	_name = "Alakazam";
+public class Hypno extends Pokemon{
+    public Hypno(){
+	_name = "Hypno";
 	Type1 = "Psychic";
 	Type2 = "none";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 50;
-	_defb = 45;
-	_spdb = 120;
-	_spb = 135;
-	_hitPtsb = 55;
+	_atkb = 73;
+	_defb = 70;
+	_spdb = 67;
+	_spb = 115;
+	_hitPtsb = 85;
 	HealPP();
+    }
+
+    public int Pound(Pokemon a){
+	int main = damageCalc(a,35);
+	double mod = Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
     public int Confusion(Pokemon a){
@@ -19,60 +25,51 @@ public class Alakazam extends Pokemon{
 	return (int)(main * mod);
     }
 
-    public int Psybeam(Pokemon a){
-	int main = damageCalcsp(a,65);
-	double mod = 1.5 * Effective(a, "Psychic");
+    public int Headbutt(Pokemon a){
+	int main = damageCalc(a,70);
+	double mod = Effective(a, "Normal");
 	return (int)(main * mod);
     }
-
+    
     public int Psychic(Pokemon a){
 	int main = damageCalcsp(a,90);
 	double mod = 1.5 * Effective(a, "Psychic");
 	return (int)(main * mod);
     }
 
-    public void Recover(){
-	if (getHP() > HPCalc()/2){
-	    setHP(HPCalc());
-	}
-	else
-	    setHP(getHP()+ HPCalc()/2);       
-    }
-
     public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
 	    setPP1(getPP1()-1);
-	    return Confusion(a);
+	    return Pound(a);
 	}
 	else if ( x == 2){
 	    setPP2(getPP2()-1);
-	    return Psybeam(a);
+	    return Confusion(a);
 	}
 	else if (x == 3){
 	    setPP3(getPP3()-1);
-	    return Psychic(a);
+	    return Headbutt(a);
 	}
 	else if (x == 4){
 	    setPP4(getPP4()-1);
-	    Recover();
-	    return 0;
+	    return Psychic(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return ("1:Confusion \t" + getPP1() + "\n" +
-		"2:Psybeam \t" +getPP2() + "\n" +
-		"3:Psychic \t" + getPP3() + "\n" +
-		"4:Recover \t" + getPP4() + "\n");
+	return ("1:Pound \t" + getPP1() + "\n" +
+		"2:Confusion \t" +getPP2() + "\n" +
+		"3:Headbutt \t" + getPP3() + "\n" +
+		"4:Psychic \t" + getPP4() + "\n");
     }
 
     public void HealPP(){
-	setPP1(25);
-	setPP2(20);
-	setPP3(10);
-	setPP4(20);
+	setPP1(35);
+	setPP2(25);
+	setPP3(15);
+	setPP4(10);
     }
   
 }

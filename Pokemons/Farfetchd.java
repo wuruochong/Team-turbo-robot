@@ -10,41 +10,66 @@ public class Farfetchd extends Pokemon{
 	_spdb = 60;
 	_spb = 58;
 	_hitPtsb = 52;
-	_hitPts = HPCalc();
-	_atk = statCalc(_atkb);
-	_def = statCalc(_defb);
-	_spd = statCalc(_spdb);
-	_sp = statCalc(_spb);
+	HealPP();
     }
 
-    public int Tackle(){
-	return 35;
+    public int Fury_Attack(Pokemon a){
+	int main = (int)(Math.random()*5+1) * damageCalc(a,15);
+	double mod = 1.5 * Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int Razor_Leaf(){
-	return 35;
+    public int Peck(Pokemon a){
+	int main = damageCalc(a,35);
+	double mod = 1.5 * Effective(a, "Flying");
+	return (int)(main * mod);
     }
 
-    public int Vine_Whip(){
-	return 55;
+    public int Slash(Pokemon a){
+	int main = damageCalc(a,70);
+	double mod = 1.5 * Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int SolarBeam(){
-	return 120;
+    public int Body_Slam(Pokemon a){
+	int main = damageCalc(a,85);
+	double mod = 1.5 * Effective(a, "Normal");
+	return (int)(main * mod);
     }
 
-    public int ReadMove(int x){
+    public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
-	    return Scratch();
+	    setPP1(getPP1()-1);
+	    return Fury_Attack(a);
 	}
 	else if ( x == 2){
-	    return Ember();
+	    setPP2(getPP2()-1);
+	    return Peck(a);
+	}
+	else if (x == 3){
+	    setPP3(getPP3()-1);
+	    return Slash(a);
+	}
+	else if (x == 4){
+	    setPP4(getPP4()-1);
+	    return Body_Slam(a);
 	}
 	else
 	    return 0;
     }
 
     public String PrintMoves(){
-	return "1:Scratch" + "\n" + "2:Ember";
+	return ("1:Fury Attack \t" + getPP1() + "\n" +
+		"2:Peck \t" +getPP2() + "\n" +
+		"3:Slash \t" + getPP3() + "\n" +
+		"4:Body Slam \t" + getPP4() + "\n");
     }
+
+    public void HealPP(){
+	setPP1(20);
+	setPP2(35);
+	setPP3(20);
+	setPP4(15);
+    }
+  
 }

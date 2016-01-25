@@ -1,38 +1,38 @@
-public class Blastoise extends Pokemon{
-    public Blastoise(){
-	_name = "Blastoise";
+public class Golduck extends Pokemon{
+    public Golduck(){
+	_name = "Golduck";
 	Type1 = "Water";
 	Type2 = "none";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 83;
-	_defb = 100;
-	_spdb = 78;
-	_spb = 85;
-	_hitPtsb = 79;
+	_atkb = 82;
+	_defb = 78;
+	_spdb = 85;
+	_spb = 80;
+	_hitPtsb = 80;
 	HealPP();
     }
 
-    public int Water_Gun(Pokemon a){
-	int main = damageCalcsp(a,40);
-	double mod = 1.5 * Effective(a, "Water");
-	return (int)(main * mod);
-    }
-
-    public int Bite(Pokemon a){
-	int main = damageCalc(a,60);
+    public int Fury_Swipes(Pokemon a){
+	int main = (int)(Math.random()*5+1) * damageCalc(a,18);
 	double mod = Effective(a, "Normal");
 	return (int)(main * mod);
     }
 
-    public int Skull_Bash(Pokemon a){
-	int main = damageCalc(a,100);
+    public int Scratch(Pokemon a){
+	int main = damageCalc(a,40);
 	double mod = Effective(a, "Normal");
 	return (int)(main * mod);
     }
 
+    public int Confusion(Pokemon a){
+	int main = damageCalc(a,50);
+	double mod = 1.5 * Effective(a, "Psychic");
+	return (int)(main * mod);
+    }
+    
     public int Hydro_Pump(Pokemon a){
-	int main = damageCalcsp(a,120);
+	int main = damageCalc(a,120);
 	double mod = 1.5 * Effective(a, "Water");
 	return (int)(main * mod);
     }
@@ -40,15 +40,15 @@ public class Blastoise extends Pokemon{
     public int ReadMove(int x,Pokemon a){
 	if ( x == 1){
 	    setPP1(getPP1()-1);
-	    return Water_Gun(a);
+	    return Fury_Swipes(a);
 	}
 	else if ( x == 2){
 	    setPP2(getPP2()-1);
-	    return Bite(a);
+	    return Scratch(a);
 	}
 	else if (x == 3){
 	    setPP3(getPP3()-1);
-	    return Skull_Bash(a);
+	    return Confusion(a);
 	}
 	else if (x == 4){
 	    setPP4(getPP4()-1);
@@ -59,16 +59,16 @@ public class Blastoise extends Pokemon{
     }
 
     public String PrintMoves(){
-	return ("1:Water Gun \t" + getPP1() + "\n" +
-		"2:Bite \t" +getPP2() + "\n" +
-		"3:Skull Bash \t" + getPP3() + "\n" +
+	return ("1:Fury Swipes \t" + getPP1() + "\n" +
+		"2:Scratch \t" +getPP2() + "\n" +
+		"3:Confusion \t" + getPP3() + "\n" +
 		"4:Hydro Pump \t" + getPP4() + "\n");
     }
 
     public void HealPP(){
-	setPP1(25);
-	setPP2(25);
-	setPP3(15);
+	setPP1(15);
+	setPP2(35);
+	setPP3(25);
 	setPP4(5);
     }
   

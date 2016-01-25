@@ -1,20 +1,20 @@
-public class Aerodactyl extends Pokemon{
-    public Aerodactyl(){
-	_name = "Aerodactyl";
-	Type1 = "Rock";
-	Type2 = "Flying";
+public class Golbat extends Pokemon{
+    public Golbat(){
+	_name = "Golbat";
+	Type1 = "Flying";
+	Type2 = "Poison";
 	_exp = 0;
 	_lvl = 50;
-	_atkb = 105;
-	_defb = 65;
-	_spdb = 130;
-	_spb = 60;
-	_hitPtsb = 80;
+	_atkb = 80;
+	_defb = 70;
+	_spdb = 90;
+	_spb = 75;
+	_hitPtsb = 75;
 	HealPP();
     }
 
     public int Wing_Attack(Pokemon a){
-	int main = damageCalc(a,35);
+	int main =  damageCalc(a,35);
 	double mod = 1.5 * Effective(a, "Flying");
 	return (int)(main * mod);
     }
@@ -25,14 +25,14 @@ public class Aerodactyl extends Pokemon{
 	return (int)(main * mod);
     }
 
-    public int Take_Down(Pokemon a){
-	int main = damageCalc(a,90);
+    public int Razor_Wind(Pokemon a){
+	int main = damageCalcsp(a,80);
 	double mod = Effective(a, "Normal");
 	return (int)(main * mod);
     }
-
-    public int HyperBeam(Pokemon a){
-	int main = damageCalc(a,150);
+    
+    public int Double_Edge(Pokemon a){
+	int main = damageCalc(a,100);
 	double mod = Effective(a, "Normal");
 	return (int)(main * mod);
     }
@@ -48,11 +48,11 @@ public class Aerodactyl extends Pokemon{
 	}
 	else if (x == 3){
 	    setPP3(getPP3()-1);
-	    return Take_Down(a);
+	    return Razor_Wind(a);
 	}
 	else if (x == 4){
 	    setPP4(getPP4()-1);
-	    return HyperBeam(a);
+	    return Double_Edge(a);
 	}
 	else
 	    return 0;
@@ -61,15 +61,15 @@ public class Aerodactyl extends Pokemon{
     public String PrintMoves(){
 	return ("1:Wing Attack \t" + getPP1() + "\n" +
 		"2:Bite \t" +getPP2() + "\n" +
-		"3:Take Down \t" + getPP3() + "\n" +
-		"4:HyperBeam \t" + getPP4() + "\n");
+		"3:Razor Wind \t" + getPP3() + "\n" +
+		"4:Double Edge \t" + getPP4() + "\n");
     }
 
     public void HealPP(){
 	setPP1(35);
 	setPP2(25);
-	setPP3(20);
-	setPP4(5);
+	setPP3(10);
+	setPP4(15);
     }
   
 }
