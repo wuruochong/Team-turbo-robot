@@ -37,4 +37,13 @@ public class Trainer {
     public Pokemon getPokemon(int x){
 	return pokemonHolder[x];
     }
+    public boolean isAlive(){
+	boolean res = true;
+	for (Pokemon x : pokemonHolder){
+	    if (x.isAlive() == false){
+		res = false;
+	    }
+	}
+	return res;
+    }
 }

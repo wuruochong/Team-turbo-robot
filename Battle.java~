@@ -1,20 +1,32 @@
 import cs1.Keyboard;
 
 public class Battle{
-    private Pokemon player;
-    private Pokemon enemy;
+    private Trainer player;
+    private Trainer enemy;
     private int roundCount;
     private boolean gameOver;
     
-    public Battle(Pokemon p, Pokemon e){
+    public Battle(Trainer p, Trainer e){
 	player = p;
 	enemy = e;
 	roundCount = 0;
+	playerPok = 0;
+	enemyPok = 0;
 	gameOver = false;
-	newGame();
+	newBattle();
     }
 
-    public void newGame(){
+    public void newBattle(){
+	
+	while (gameOver == false){
+	    newGame(player.getPokemon(playerPok),enemy.getPokemon(enemyPok));
+	    if (playerPok > 5 || enemyPok >5){
+	    gameOver == true;
+	}
+	}
+    }
+
+    public void newGame(Pokemon player, Pokemon enemy){
         System.out.println("Your Pokemon is:");
 	System.out.println(player.toString());
 	System.out.println("The enemy is:");
@@ -35,11 +47,17 @@ public class Battle{
 	        System.out.println("Player dealt "+playerdmg+" dmg");
 		if (!enemy.isAlive()){
 		    System.out.println("You defeated " + enemy.getName());
+		    enemyPok+=1;
 		    break;
 		}
 		System.out.println("enemy hp =" + enemy.getHP());
 		player.lowerHP(enemydmg);
 		System.out.println("Enemy dealt "+enemydmg+" dmg");
+		if (!player.isAlive()){
+		    System.out.println("Your " + player.getName() + " has fainted");
+		    playerPok+=1;
+		    break;
+		}
 		System.out.println("player hp =" + player.getHP());
 	    }
 	    else if (player.getSpd() < enemy.getSpd()){
@@ -47,16 +65,22 @@ public class Battle{
 		System.out.println("Enemy dealt "+enemydmg+" dmg");
 		if (!player.isAlive()){
 		    System.out.println("Your " + player.getName() + " has fainted");
+		    playerPok+=1;
 		    break;
 		}
 		System.out.println("player hp =" + player.getHP());
 		enemy.lowerHP(playerdmg);
 	        System.out.println("Player dealt "+playerdmg+" dmg");
+		if (!enemy.isAlive()){
+		    System.out.println("You defeated " + enemy.getName());
+		    enemyPok+=1;
+		    break;
+		}
 		System.out.println("enemy hp =" + enemy.getHP());
 	    }
-	    if ((player.isAlive() == false) || (enemy.isAlive() == false)){
-		gameOver = true;
-	    }
+	    //	    if ((player.isAlive() == false) || (enemy.isAlive() == false)){
+	    //	gameOver = true;
+	    // }
 	}
 	    
 	System.out.println("The Battle is Over");

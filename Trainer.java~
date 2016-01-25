@@ -35,6 +35,6 @@ public class Trainer {
     }
 
     public Pokemon getPokemon(int x){
-	return pokemonHolder[x-1];
+	return pokemonHolder[x];
     }
 }
