@@ -21,7 +21,34 @@ public class Game{
 	pokemonList.add(new Blastoise());
 	pokemonList.add(new Butterfree());
 	pokemonList.add(new Chansey());
-	pokemonList.add(new
+	pokemonList.add(new Charizard());
+	pokemonList.add(new Clefable());
+	pokemonList.add(new Cloyster());
+	pokemonList.add(new Dewgong());
+	pokemonList.add(new Dragonite());
+	pokemonList.add(new Dugtrio());
+	pokemonList.add(new Electabuzz());
+	pokemonList.add(new Electrode());
+	pokemonList.add(new Exeggutor());
+	pokemonList.add(new Farfetchd());
+	pokemonList.add(new Fearow());
+	pokemonList.add(new Gengar());
+	pokemonList.add(new Golbat());
+	pokemonList.add(new Golduck());
+	pokemonList.add(new Golem());
+	pokemonList.add(new Gyarados());
+	pokemonList.add(new Hitmonchan());
+	pokemonList.add(new Hitmonlee());
+	pokemonList.add(new Hypno());
+	pokemonList.add(new Jolteon());
+	pokemonList.add(new Jynx());
+	pokemonList.add(new Kabutops());
+	pokemonList.add(new Machamp());
+	pokemonList.add(new Mew());
+	pokemonList.add(new Mewtwo());
+	pokemonList.add(new Moltres());
+	pokemonList.add(new Venusaur());
+	pokemonList.add(new Zapdos());
 	newGame();
 
     }
